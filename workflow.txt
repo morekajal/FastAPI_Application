@@ -57,4 +57,9 @@ Directory Setup :
 
 - git status
 - git add . - to add all files
-- you can add .gitignore and untrack the files/folders which you dont want to push in git repo.
+    - you can add .gitignore and untrack the files/folders which you dont want to push in git repo.
+- git commit -m "Initial Commit"
+- git branch -M main
+- git remote add origin git@github.com:morekajal/FastAPI_Application.git
+- git push -u origin main
+- 
