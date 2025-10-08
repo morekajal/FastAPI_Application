@@ -1,0 +1,60 @@
+Udemy : https://ibm-learning.udemy.com/course/fastapi-course/learn/lecture/26260420#overview
+
+Technical stack covered :
+    - FastAPI : for building APIs as well as web apps
+    - FastAPI needs an Asynchronous web server to execute. eg: Uvicorn, Hypercorn etc.
+    - Version Control System : Git
+    - Codebase / code hosting : GitHub
+    - PyTest : Used for executing unit tests that we have written
+    - SQL Alchemy : ORM 
+    - Postgress : for database, this is production based database, if you dont want to use this, you can also setup SQLite (file system based database)
+    - Jinja2 Templates : To buils web app using HTML screens. 
+
+
+Directory Setup :
+1. Create folder 
+2. Separate env : python -m venv venv
+3. Version Control System with Git : Inside venv
+    - git init 
+    - create .gitignore file from the pallette
+    - We should include all such files/folders which we dont want to push to git repo.
+    - 
+
+** Folder : Backend
+* Hello FastAPI
+- create requirements.txt containing versions of fastapi and Uvicorn
+- cd backend : pip install -r requirements.txt
+
+- main.py : this provides the main entry point for our fastapi application
+    from fastapi import FastAPI : import the FastAPI class
+    app - object of this class 
+    @ : Decorator - to provide path operation
+    Define some function Inside this Decorator
+
+    - make sure you are in the working Directory : uvicorn main:app --reload
+    - Follow the link
+    - Can also check the FastAPI documentation from : http://127.0.0.1:8000/docs
+
+** HTTP Verbs & Usage:
+- GET request : Used to retrirve some data from particular resource
+- POST request : Used to create a new record to the specified resource.
+- PUT request : Used to Update the record
+    - PATCH request : Used for Partial Update
+- DELETE request : Used to Delete particular record from the specified resource
+
+** Refactoring Project Configuration Variables
+- To keep track and maintain the project configurations and variables 
+- This is important because on different environments like staging env, production env - we need to have different values for these configuration variables
+- backend/core/config.py : Create class and its Object and then import in main.py
+
+** Set up git repo :
+- Check with : git init
+- If not recognized : Download Git and install on your machine
+- Go to current directory and initialize empty git with init
+- Configure the credentials with :
+    - git config user.name "your user name"
+    - git config user.email "your email id"
+
+- git status
+- git add . - to add all files
+- you can add .gitignore and untrack the files/folders which you dont want to push in git repo.
