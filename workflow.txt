@@ -42,12 +42,31 @@ Directory Setup :
     - PATCH request : Used for Partial Update
 - DELETE request : Used to Delete particular record from the specified resource
 
+** WSGI : Web Server Gateway Interface 
+- Long standing python standards for connecting *Synchronous Python web application to web server
+- Concurrency model is Synchronous i.e Each request is handled by a single callable that returns a response before next line of your code runs.
+- Parallelism is achieved by multiple worker processes/threads at Server level.
+- Protocols supported are HTTP/1.1 request/response 
+- Does not support Websocket or Long live streaming
+- Deployment Pattern : 
+    - Typical stack : Nginx -> Gunicorn/uWSGI -> Django/Flask app
+
+
+** ASGI : Asynchronous Server Gateway Interface
+- Its a new standard that generalizes WSGI to support both *Sync and *Async code and *Multiple Protocols
+- Provides flexible interface for modern Python servers like Uvicorn, Hypercorn, Daphne - that can use *asyncio
+- Concurrency model : Asynchronous with *async/await, 
+- A single process can handle many concurrent connections efficiently 
+- Protocols supported : HTTP/1.1, HTTP/2, Websocket, and lifespan protocols for startup/shutdown signals.
+- Deployment Pattern : 
+    - Typical stack : Nginx -> Uvicorn/Hypercorn/Daphne (ASGI workers) ->Django (ASGI), Starlette, FastAPI etc.
+
 ** Refactoring Project Configuration Variables
 - To keep track and maintain the project configurations and variables 
 - This is important because on different environments like staging env, production env - we need to have different values for these configuration variables
 - backend/core/config.py : Create class and its Object and then import in main.py
 
-** Set up git repo :
+** Set up git repo : ./backend
 - Check with : git init
 - If not recognized : Download Git and install on your machine
 - Go to current directory and initialize empty git with init
@@ -60,6 +79,12 @@ Directory Setup :
     - you can add .gitignore and untrack the files/folders which you dont want to push in git repo.
 - git commit -m "Initial Commit"
 - git branch -M main
-- git remote add origin git@github.com:morekajal/FastAPI_Application.git
+- git remote add origin git@github.com:user_name/FastAPI_Application.git
 - git push -u origin main
-- 
+### Had an error while setting up github on terminal, because of SSH and HTTP access, choose HTTP access and configuration to setup github on local.
+
+** Type HINT : It's super important when working on Production grade projects
+- As python is Dynamically typed language, so the Interpreter *Does Not Check Types at the Compile time, rather it does in the runtime. 
+- Why should we care about Type Hints:
+    - Easier to understand, debug, find bugs to take the code further.
+    - 
