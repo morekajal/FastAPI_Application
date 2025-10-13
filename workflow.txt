@@ -83,6 +83,19 @@ Directory Setup :
 - git push -u origin main
 ### Had an error while setting up github on terminal, because of SSH and HTTP access, choose HTTP access and configuration to setup github on local.
 
+--------------------------------------------------------------------
+### Common Steps to Follow while pushing to github
+- make sure you're in correct git initialized folder : cd .\backend\
+    - Check the folder path again:
+    - git rev-parse --show-toplevel
+- git status
+- git add .
+- git commit -m "Commit Message"
+- git branch -M main
+- git remote -v : to check you are in correct repo
+- git push -u origin main 
+--------------------------------------------------------------------
+
 ** Type HINT : It's super important when working on Production grade projects
 - As python is Dynamically typed language, so the Interpreter *Does Not Check Types at the Compile time, rather it does in the runtime. 
 - Why should we care about Type Hints:
