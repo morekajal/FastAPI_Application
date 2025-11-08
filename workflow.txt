@@ -100,4 +100,7 @@ Directory Setup :
 - As python is Dynamically typed language, so the Interpreter *Does Not Check Types at the Compile time, rather it does in the runtime. 
 - Why should we care about Type Hints:
     - Easier to understand, debug, find bugs to take the code further.
-    - 
+    - Autocompletes work in faster way with Type hinting
+    - For a new developer, it becomes easier for them to debug and understand the codebase
+    - We can even stop bugs entering our code base if we use type hinting correctly.
+    
