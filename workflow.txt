@@ -103,4 +103,9 @@ Directory Setup :
     - Autocompletes work in faster way with Type hinting
     - For a new developer, it becomes easier for them to debug and understand the codebase
     - We can even stop bugs entering our code base if we use type hinting correctly.
-    
+
+** Static Hype checkers : like Mypy, install it with pip and run the file as mypy file_name.py 
+
+** Advanced Type Hinting : with data structures like list, dict, tuple, etc.
+    - From Python 3.9 onwards, we have *typing module* which gives support to List Tuple Dict and some more Complex data structures
+
